@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#SBATCH --job-name=FPREP_BF_CLUB
+#SBATCH --job-name=BCLUB_FPREP
 #SBATCH -N 1
 #SBATCH -c 1
 #SBATCH -t 24:00:00
@@ -12,14 +12,12 @@
 
 
 if [ ${SLURM_ARRAY_TASK_ID} -lt 10 ]; then
-    id="sub-00${SLURM_ARRAY_TASK_ID}"
-elif [  ${SLURM_ARRAY_TASK_ID} -lt 100 ]; then
-    id="sub-0${SLURM_ARRAY_TASK_ID}"
-else 
-    id="sub-${SLURM_ARRAY_TASK_ID}" 
+    sub="sub-00${SLURM_ARRAY_TASK_ID}"
+else
+    sub="sub-0${SLURM_ARRAY_TASK_ID}"
 fi
 
-singularity exec -B /:/home_dir /projects/niblab/bids_projects/Singularity_Containers/fmriprep.simg fmriprep /home_dir/projects/niblab/bids_projects/Experiments/BreakfastClub/BIDS/ses-2/ /home_dir/projects/niblab/bids_projects/Experiments/BreakfastClub/fmriprep/${sub}/ses-2 \
+singularity exec -B /:/home_dir /projects/niblab/bids_projects/Singularity_Containers/fmriprep.simg fmriprep /home_dir/projects/niblab/bids_projects/Experiments/BreakfastClub/BID$
     participant  \
     --participant-label $sub \
     --fs-license-file /home_dir/projects/niblab/bids_projects/freesurfer/license.txt \
@@ -28,5 +26,6 @@ singularity exec -B /:/home_dir /projects/niblab/bids_projects/Singularity_Conta
     --omp-nthreads 16 --n_cpus 16  \
     --bold2t1w-dof 12 \
     --output-space template --template MNI152NLin2009cAsym \
-    -w /home_dir/projects/niblab/bids_projects/Experiments/BreakfastClub/fmriprep/${sub}/ses-2 \
+    -w /home_dir/projects/niblab/bids_projects/Experiments/BreakfastClub/fmriprep/${sub}/ses-1 \
     --debug  \
+
