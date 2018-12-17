@@ -2,8 +2,7 @@
   
 <dl>
     <dt>Diretories:</dt>   
-    <dd>[data_ana]    : analysis scripts and files, such as decoding<br/>
+    <dd> [data_ana](https://github.com/niblunc/BreakfastClub/tree/master/data_ana)  : analysis scripts and files, such as decoding<br/>
         [data_prep]   : data preparation files <br/> 
         [info_files]  : data information, such as dicominfo.tsv files or paradigm explanations, etc.</dd><br/>
     </dl>
- [data_ana] : https://github.com/niblunc/BreakfastClub/tree/master/data_ana  
