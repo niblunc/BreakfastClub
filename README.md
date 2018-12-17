@@ -1,6 +1,8 @@
 # BreakfastClub
   
-**Diretories:**  
-: data_ana  | analysis scripts and files, such as decoding   
+<dl>
+    <dt>Diretories:</dt>   
+    <dd>data_ana    : analysis scripts and files, such as decoding   
         data_prep   : data preparation files  
-        info_files  : data information, such as dicominfo.tsv files or paradigm explanations, etc.
+        info_files  : data information, such as dicominfo.tsv files or paradigm explanations, etc.</dd>
+</dl>
