@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
   
   
-## [0.0.1] - 2018-11-06  
+## [0.0.1] - 2018-12-17  
 ### Added  
 - Complete BIDS data for all sessions(1,2), subjects (1-21, minus subject 7,total 20 subjects), task-resting
 - Complete fmriprep data for all sessions(1,2), task-resting
