@@ -1,0 +1,4 @@
+3	IM-0175-0001.dcm	1-Localizer	sub-001	-	-	192	192	3	1	0.02	5.0	Localizer	False	False	BF01v1  16Oct2015	TRIO^HEAD	Burger, Kyle	Localizer	*fl2d1	('ORIGINAL', 'PRIMARY', 'M', 'NORM', 'DIS2D')		029Y	F	20151016
+75	IM-0176-0001-0001.dcm	2-gre_field_mapping	sub-001	-	-	64	64	72	1	0.561	7.38	gre_field_mapping	False	False	BF01v1  16Oct2015	TRIO^HEAD	Burger, Kyle	gre_field_mapping	*fm2d2r	('ORIGINAL', 'PRIMARY', 'M', 'ND')		029Y	F	20151016
+111	IM-0177-0001.dcm	3-gre_field_mapping	sub-001	-	-	64	64	36	1	0.561	7.38	gre_field_mapping	False	False	BF01v1  16Oct2015	TRIO^HEAD	Burger, Kyle	gre_field_mapping	*fm2d2r	('ORIGINAL', 'PRIMARY', 'P', 'ND')		029Y	F	20151016
+318	IM-0178-0001.dcm	4-ep2d_resting_207scans	sub-001	-	-	70	70	36	207	2.0	23.0	ep2d_resting_207scans	False	False	BF01v1  16Oct2015	TRIO^HEAD	Burger, Kyle	ep2d_resting_207scans	*epfid2d1_70	('ORIGINAL', 'PRIMARY', 'M', 'ND', 'MOSAIC')		029Y	F	20151016
