@@ -7,8 +7,8 @@
 #SBATCH --mem-per-cpu 80000
 ## %A == SLURM_ARRAY_JOB_ID
 ## %a == SLURM_ARRAY_TASK_ID
-#SBATCH -o /projects/niblab/bids_projects/Experiments/BreakfastClub/error_files/fprep_%A_%a_ses-1_out.txt
-#SBATCH -e /projects/niblab/bids_projects/Experiments/BreakfastClub/error_files/fprep_%a_ses-1_err.txt
+#SBATCH -o /projects/niblab/bids_projects/Experiments/BreakfastClub/scripts/fmriprep/error_files/lin_%a_ses-1_out.txt
+#SBATCH -e /projects/niblab/bids_projects/Experiments/BreakfastClub/scripts/fmriprep/error_files/lin_%a_err.txt
 
 
 if [ ${SLURM_ARRAY_TASK_ID} -lt 10 ]; then
@@ -17,15 +17,8 @@ else
     sub="sub-0${SLURM_ARRAY_TASK_ID}"
 fi
 
-singularity exec -B /:/home_dir /projects/niblab/bids_projects/Singularity_Containers/fmriprep.simg fmriprep /home_dir/projects/niblab/bids_projects/Experiments/BreakfastClub/BID$
-    participant  \
-    --participant-label $sub \
-    --fs-license-file /home_dir/projects/niblab/bids_projects/freesurfer/license.txt \
-    --longitudinal \
-    --fs-no-reconall \
-    --omp-nthreads 16 --n_cpus 16  \
-    --bold2t1w-dof 12 \
-    --output-space template --template MNI152NLin2009cAsym \
-    -w /home_dir/projects/niblab/bids_projects/Experiments/BreakfastClub/fmriprep/${sub}/ses-1 \
-    --debug  \
 
+
+singularity exec  -B /:/base_dir /projects/niblab/bids_projects/Singularity_Containers/fmriprep_v2_2019.simg \
+fmriprep /base_dir/projects/niblab/bids_projects/Experiments/BreakfastClub/BIDS /base_dir/projects/niblab/bids_projects/Experiments/BreakfastClub/fmriprep2 \
+participant --participant-label $sub --skip_bids_validation --fs-license-file /base_dir/projects/niblab/bids_projects/freesurfer/license.txt --longitudinal --fs-no-reconall --omp-nthreads 16 --n_cpus 16 --bold2t1w-dof 12 --output-spaces MNI152Lin -w /base_dir/projects/niblab/bids_projects/Experiments/BreakfastClub/fmriprep2
